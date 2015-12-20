@@ -1,5 +1,8 @@
 # baseball
 ASCII Baseball Game
 
-To build:
-	gcc baseball.c -Wall -lncurses
+To build this game, simply `make`, or:
+
+```
+gcc -Wall baseball.c -lncurses -o baseball
+```
