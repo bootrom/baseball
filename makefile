@@ -1,10 +1,16 @@
-OBJS =baseball.o
-C_FLAGS =-Wall 
-C_FILES =baseball.c
-LIBS =-lncurses
+PROG =baseball
+SRCS =$(wildcard *.c)
+OBJS =$(SRCS:.c=.o)
 
-all:
-	gcc $(C_FILES) $(C_FLAGS) $(LIBS) -o $(OBJS)
+CFLAGS +=-Wall
+LDLIBS +=-lncurses
+
+all: $(PROG)
+.PHONY: all
+
+$(PROG): $(OBJS)
 
 clean:
-	rm -f $(OBJS)
+	$(RM) $(PROG)
+	$(RM) $(OBJS)
+.PHONY: all
